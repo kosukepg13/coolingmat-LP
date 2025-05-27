@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -49,24 +49,13 @@ const Footer: React.FC = () => {
           
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-4">
-              <li className="flex items-center">
-                <Mail size={16} className="mr-2 text-cyan-300" />
-                <a href="mailto:info@petcoolmats.com" className="text-blue-200 hover:text-white transition-colors">
-                  info@petcoolmats.com
-                </a>
-              </li>
-              <li className="flex items-center">
-                <Phone size={16} className="mr-2 text-cyan-300" />
-                <a href="tel:1-800-123-4567" className="text-blue-200 hover:text-white transition-colors">
-                  1-800-123-4567
-                </a>
-              </li>
-            </ul>
-            <div className="mt-6">
-              <button className="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-2 px-4 rounded transition-colors">
+            <div className="mt-2">
+              <a 
+                href="https://tokro.shop/pages/contact"
+                className="bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-2 px-4 rounded transition-colors inline-block"
+              >
                 Contact Form
-              </button>
+              </a>
             </div>
           </div>
         </div>

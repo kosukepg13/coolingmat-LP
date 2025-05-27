@@ -55,15 +55,6 @@ const Benefits: React.FC = () => {
                 </li>
               ))}
             </ul>
-            
-            <div className="mt-10">
-              <button 
-                className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-                data-test-id="benefits-cta"
-              >
-                View Scientific Evidence
-              </button>
-            </div>
           </div>
         </div>
       </div>
