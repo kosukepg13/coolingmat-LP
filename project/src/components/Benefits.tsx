@@ -19,7 +19,7 @@ const Benefits: React.FC = () => {
               <img 
                 src="/pet-relaxing.png" 
                 alt="Dog relaxing on cooling mat" 
-                className="rounded-lg shadow-lg w-full h-auto object-cover scale-150"
+                className="rounded-lg shadow-lg w-full h-auto object-cover scale-100"
                 loading="lazy"
               />
               <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-lg shadow-lg">
