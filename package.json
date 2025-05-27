@@ -2,5 +2,11 @@
   "devDependencies": {
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   }
 }
