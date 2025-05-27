@@ -31,7 +31,7 @@ const Benefits: React.FC = () => {
           
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              
+              Scientifically Proven Cooling Effect
             </h2>
             <p className="text-lg text-gray-700 mb-8">
               Our cooling mats are scientifically proven effective through collaboration with veterinarians.
