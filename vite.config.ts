@@ -9,6 +9,14 @@ export default defineConfig({
   },
   root: 'project',
   publicDir: '../public',
+  base: '/',
+  server: {
+    port: 5173,
+    strictPort: true,
+    headers: {
+      'Content-Type': 'application/javascript',
+    },
+  },
   build: {
     outDir: '../dist',
     assetsDir: 'assets',
