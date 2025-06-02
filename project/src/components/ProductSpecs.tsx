@@ -91,8 +91,10 @@ const ProductSpecs: React.FC = () => {
                 <div>
                   <img 
                     src={activeTab === 'medium' 
-                      ? 'dist/middle-mat.jpg'
-                      : 'dist/large-mat.jpg'}
+                      ? '/middle-mat.jpg'
+                      : '/large-mat.jpg'} 
+                      // ここで画像パスを指定しています。やり方はproject/publicに画像を入れたらこんな感じで相対パスをコピーして貼る
+                      //画像はprojectのpublicに入れないと参照されない
                     alt={`Cooling mat for ${activeTab === 'medium' ? 'medium' : 'large'} dogs`}
                     className="rounded-lg w-full h-auto"
                     loading="lazy"
