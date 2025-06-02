@@ -4,11 +4,13 @@
   publish = "dist"
 
 [[redirects]]
+  # ① まず、assets 配下へのリクエストはそのまま返す
   from   = "/assets/*"
   to     = "/assets/:splat"
   status = 200
 
 [[redirects]]
+  # ② 上記以外（例：/about や /contact など）はすべて index.html に返す
   from   = "/*"
   to     = "/index.html"
   status = 200
@@ -19,21 +21,8 @@
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Content-Type = "application/javascript"
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Content-Type = "application/javascript"
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Content-Type = "text/css"
-    Cache-Control = "public, max-age=31536000, immutable"
-
+  # （必要に応じてヘッダー設定がある場合はそのまま）
+  
 [[headers]]
   for = "/*.mjs"
   [headers.values]
