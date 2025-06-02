@@ -4,17 +4,9 @@
   publish = "dist"
 
 [[redirects]]
-  from = "/assets/*"
-  to = "/assets/:splat"
-  status = 200
-  force = true
-  conditions = {Path = ["/assets/*"]}
-
-[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = {Path = ["/*"]}
 
 [build.environment]
   NODE_VERSION = "18"
