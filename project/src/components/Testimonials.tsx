@@ -8,22 +8,20 @@ interface Testimonial {
   date: string;
   comment: string;
   petType: string;
-  withImage?: boolean;
 }
 
 const Testimonials: React.FC = () => {
   const testimonials: Testimonial[] = [
     {
-      name: "Misaki Tanaka",
+      name: "Sarah Johnson",
       image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       rating: 5,
       date: "June 15, 2024",
       comment: "I bought this for my Toy Poodle who's sensitive to heat. Thanks to this cooling mat, he can comfortably stay in the living room even during the hottest parts of the day. Love that it's washable too!",
-      petType: "Toy Poodle",
-      withImage: true
+      petType: "Toy Poodle"
     },
     {
-      name: "Kenta Sato",
+      name: "Michael Anderson",
       image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       rating: 4,
       date: "June 3, 2024",
@@ -31,7 +29,7 @@ const Testimonials: React.FC = () => {
       petType: "Labrador"
     },
     {
-      name: "Yuko Suzuki",
+      name: "Emily Parker",
       image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       rating: 5,
       date: "May 22, 2024",
@@ -39,13 +37,12 @@ const Testimonials: React.FC = () => {
       petType: "American Shorthair"
     },
     {
-      name: "Makoto Takahashi",
+      name: "David Wilson",
       image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       rating: 5,
       date: "May 18, 2024",
       comment: "I have two Shiba Inus and was worried about them overheating. This mat keeps them comfortable, and I love how durable it is - it stands up to their occasional chewing!",
-      petType: "Shiba Inu",
-      withImage: true
+      petType: "Shiba Inu"
     }
   ];
 
@@ -116,23 +113,9 @@ const Testimonials: React.FC = () => {
                       ))}
                     </div>
                     
-                    <p className="text-gray-700 mb-4">
+                    <p className="text-gray-700">
                       {testimonial.comment}
                     </p>
-                    
-                    {testimonial.withImage && (
-                      <div className="mt-4">
-                        <img 
-                          src={testimonial.petType === "Toy Poodle" 
-                            ? "https://images.pexels.com/photos/5731862/pexels-photo-5731862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                            : "https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                          } 
-                          alt={`${testimonial.name}'s pet`} 
-                          className="rounded-lg w-full h-48 object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}

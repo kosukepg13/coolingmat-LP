@@ -91,8 +91,8 @@ const ProductSpecs: React.FC = () => {
                 <div>
                   <img 
                     src={activeTab === 'medium' 
-                      ? '/middle-mat.jpg'
-                      : '/large-mat.jpg'}
+                      ? '/assets/middle-mat.jpg'
+                      : '/assets/large-mat.jpg'}
                     alt={`Cooling mat for ${activeTab === 'medium' ? 'medium' : 'large'} dogs`}
                     className="rounded-lg w-full h-auto"
                     loading="lazy"
