@@ -19,6 +19,15 @@
   NODE_VERSION = "18"
 
 [[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "same-origin"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://images.pexels.com data:;"
+
+[[headers]]
   for = "/assets/*"
   [headers.values]
   # （必要に応じてヘッダー設定がある場合はそのまま）
