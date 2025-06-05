@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Package } from 'lucide-react';
+import { Clock, Package, Users } from 'lucide-react';
 import CtaButton from './CtaButton';
 
 const Fomo: React.FC = () => {
@@ -12,6 +12,7 @@ const Fomo: React.FC = () => {
   
   // Remaining stock (for demo purposes)
   const [stock, setStock] = useState(27);
+  const [viewers, setViewers] = useState(() => Math.floor(Math.random() * 30) + 25);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,6 +42,15 @@ const Fomo: React.FC = () => {
     return () => clearInterval(stockInterval);
   }, [stock]);
 
+  // Randomize number of viewers currently on the page
+  useEffect(() => {
+    const viewerInterval = setInterval(() => {
+      setViewers(Math.floor(Math.random() * 30) + 25);
+    }, 10000); // Every 10 seconds
+
+    return () => clearInterval(viewerInterval);
+  }, []);
+
   return (
     <section className="py-16 bg-gradient-to-r from-blue-600 to-cyan-500 text-white">
       <div className="container mx-auto px-4">
@@ -50,10 +60,10 @@ const Fomo: React.FC = () => {
               Limited Time Offer!
             </span>
             <h2 className="text-3xl font-bold mb-2">
-              Summer Special: 30% OFF
+              Today Only: 30% OFF
             </h2>
             <p className="text-lg opacity-90">
-              First 100 customers only! Regular $69.80 → <span className="line-through">$69.80</span> <span className="text-2xl font-bold text-yellow-300">$36.99</span>
+              Only 100 units today! Regular $69.80 → <span className="line-through">$69.80</span> <span className="text-2xl font-bold text-yellow-300">$36.99</span>
             </p>
           </div>
           
@@ -69,7 +79,7 @@ const Fomo: React.FC = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="flex items-center justify-center gap-2">
               <Package className="w-6 h-6" />
               <div>
@@ -79,17 +89,25 @@ const Fomo: React.FC = () => {
                 </p>
               </div>
             </div>
+
+            <div className="flex items-center justify-center gap-2">
+              <Users className="w-6 h-6" />
+              <div>
+                <p className="text-sm opacity-80">People viewing now</p>
+                <p className="text-xl font-mono font-bold">{viewers}</p>
+              </div>
+            </div>
           </div>
           
           <div className="text-center">
-            <CtaButton 
-              text="Get Your Special Price Now" 
+            <CtaButton
+              text="Grab Yours Before They're Gone"
               primary={true}
               testId="fomo-cta"
               href="https://tokro.shop/products/pet-dog-self-cooling-mat-pad-for-kennels-crates-and-beds-1295491688"
             />
             <p className="mt-4 text-sm opacity-80">
-              *Limit 2 per customer. Free shipping. 7-day money-back guarantee.
+              Hurry! Once today's stock is gone, the sale ends. *Limit 2 per customer. Free shipping. 7-day money-back guarantee.
             </p>
           </div>
         </div>
